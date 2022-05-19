@@ -1,0 +1,636 @@
+:root {
+  --time: 0.4s;
+}
+h1,
+h2,
+h3,
+.container p,
+footer {
+  font-family: "Roboto", sans-serif;
+}
+
+q,
+main p {
+  font-style: italic;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+.container {
+  width: 100%;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.container p {
+  transition: all var(--time) ease-in-out;
+}
+.container div:hover p {
+  color: black;
+  font-size: 1.3rem;
+}
+.burger {
+  display: none;
+}
+nav {
+  top: 0;
+  max-width: 70%;
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(89, 89, 89);
+  position: relative;
+  transform: translateY(-100px);
+  animation-name: move-nav;
+  animation-fill-mode: forwards;
+  animation-duration: var(--time);
+  opacity: 0.7;
+  transition: opacity var(--time) ease;
+}
+.nav-list {
+  transition: all var(--time) ease-in-out;
+}
+@keyframes move-nav {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+nav:hover {
+  opacity: 1;
+}
+nav ul {
+  position: relative;
+  display: flex;
+  list-style: none;
+  color: white;
+}
+nav li + li {
+  margin-left: 2rem;
+}
+nav a {
+  transition: all calc(var(--time)) ease;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+nav a:hover {
+  color: grey;
+  cursor: pointer;
+}
+nav a:visited {
+  color: grey;
+}
+
+#underscore {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: white;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+main {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}
+.pulsate {
+  animation: pulsate 2s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0.5;
+}
+@keyframes pulsate {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+main h1 {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+}
+main p {
+  font-size: 1.5rem;
+}
+main h1 + p {
+  margin-top: 0.5rem;
+}
+main p + p {
+  margin-top: 0.25rem;
+}
+
+.container div {
+  min-height: 80px;
+  background: #2fac6c;
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login {
+  float: left;
+  background-color: #21424a !important;
+}
+.register {
+  float: right;
+}
+.login:after,
+.register:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.login:after {
+  left: 100%;
+  border-top: 80px solid #2fac6c;
+  border-right: 50px solid transparent;
+}
+.register:before {
+  right: 100%;
+  border-bottom: 80px solid #2fac6c;
+  border-left: 50px solid transparent;
+}
+.main {
+  background-image: url("./assets/bacground.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about {
+  max-width: 80%;
+  width: 100%;
+  min-height: 50vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+}
+.about > div {
+  min-height: 80%;
+}
+.about-us {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.about-us h1 {
+  margin-bottom: 1rem;
+}
+.ruler {
+  height: 200px;
+  border-left: 2px dotted grey;
+}
+.members {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.members i {
+  color: grey;
+}
+.card-container {
+  max-width: 150px;
+  width: 100%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card > * {
+  margin-top: 0.75rem;
+}
+.card-media {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card-media i:hover {
+  color: blue;
+  cursor: pointer;
+}
+.card-member-avatar {
+  border-radius: 50%;
+  border: 5px solid lightgray;
+}
+.feat-container {
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.feat-holder {
+  max-width: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.feat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+}
+.feat i {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.feat > * {
+  margin-top: 0.5rem;
+}
+.yellow {
+  background-color: rgb(255, 208, 0);
+}
+.blue {
+  background-color: rgb(79, 172, 209);
+}
+.grey {
+  background-color: darkgray;
+}
+.red {
+  background-color: red;
+}
+
+footer {
+  width: 100%;
+  min-height: 30vh;
+  background-color: rgb(47, 45, 45);
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  color: rgb(126, 120, 120);
+}
+
+.footer-container {
+  max-width: 70%;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 5rem;
+  text-align: center;
+}
+.footer-container > div {
+  min-width: 25%;
+  max-height: 25%;
+}
+.ruler-solid {
+  height: 150px;
+  border-left: 1px solid rgb(126, 120, 120);
+}
+
+footer p + p,
+footer li + li {
+  margin-top: 1rem;
+  width: 100%;
+}
+footer li {
+  position: relative;
+  list-style: none;
+  transition: all var(--time) ease;
+  cursor: pointer;
+}
+footer li::before {
+  content: ">";
+  position: absolute;
+  left: -1rem;
+  transition: all var(--time) ease;
+}
+footer li:hover {
+  transform: translateX(1rem);
+  color: beige;
+}
+footer li:hover::before {
+  transform: translateX(-1rem);
+  color: beige;
+}
+.list-feats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonials {
+  text-align: center;
+  width: 100%;
+  min-height: 30vh;
+  position: relative;
+  overflow: hidden;
+}
+.carosel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  z-index: -1;
+  transition: all var(--time) ease;
+}
+.testimonials-text {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.5rem;
+  height: 15px;
+  text-align: center;
+  color: white;
+}
+
+.testimonials-text p {
+  max-width: 100%;
+}
+q {
+  color: rgb(202, 199, 199);
+}
+.one {
+  background-image: url("./assets/desk2.jpg");
+}
+.two {
+  background-image: url("./assets/desk1.webp.jpg");
+  transform: translateX(100%);
+}
+.last {
+  background-image: url("./assets/desk3.jpg");
+  transform: translateX(100%);
+}
+.testimonials-ruler {
+  height: 100%;
+  width: 2px;
+  background-color: white;
+  margin-right: 0.7rem;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.dots {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.dot.active {
+  background-color: white;
+}
+#testimonials-name {
+  min-width: 120px;
+}
+@media (max-width: 900px) {
+  section h1 {
+    font-size: 2rem;
+  }
+  .main {
+    text-align: center;
+  }
+  main h1,
+  p {
+    z-index: 0;
+  }
+
+  section h2,
+  h3 {
+    font-size: 1.5rem;
+  }
+  section p,
+  q {
+    font-size: 1.3rem;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+  .about-us {
+    width: 80%;
+    margin-top: 2rem;
+  }
+  .members {
+    flex-direction: column;
+    width: auto;
+    text-align: center;
+    display: block;
+  }
+
+  .card-container {
+    margin: 1rem 0;
+  }
+  .features {
+    margin: 1rem 0;
+  }
+  .feat-holder {
+    flex-direction: column;
+  }
+  .feat {
+    width: 80%;
+    max-width: 400px;
+  }
+  .footer-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .ruler-solid {
+    display: none;
+  }
+  .footer-container > div {
+    width: 80%;
+  }
+  .design {
+    padding-top: 2rem;
+  }
+
+  .info {
+    padding-bottom: 2rem;
+    max-width: 100%;
+  }
+  #underscore {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 2rem;
+    transform: translateY(-100%);
+    z-index: 5;
+  }
+  .nav-list a {
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.8;
+    transition: opacity var(--time);
+    opacity: 0;
+    z-index: 5;
+    font-size: 1.5rem;
+  }
+  .nav-list li:hover {
+    transform: translateX(2rem);
+  }
+  .nav-list.nav-shown {
+    bottom: 0;
+    transform: translateY(129%);
+    background-color: black;
+    margin-bottom: 5rem;
+    z-index: 5;
+  }
+  nav {
+    max-width: 100%;
+    opacity: 1;
+    justify-content: space-around;
+    z-index: 2;
+  }
+  .active-nav {
+    background-color: black;
+  }
+  nav li + li {
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+
+  .burger {
+    font-size: 0.75rem;
+    display: block;
+    width: 50px;
+    height: 25px;
+    transition: all var(--time) ease-in-out;
+    position: relative;
+    display: flex;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    display: inline-block;
+    transition: all var(--time) ease;
+    position: absolute;
+    transition-delay: 0.2s;
+  }
+  .line.top {
+    top: 0;
+  }
+  .line.bottom {
+    bottom: 0;
+  }
+  .line.middle {
+    top: 50%;
+  }
+  .line.middle.rotate-left {
+    transform: rotate(45deg);
+  }
+  .line.middle.rotate-right {
+    transform: rotate(-45deg);
+  }
+  .line.hide {
+    transform: scale(0);
+    transform-origin: right;
+  }
+  .burger.rotate {
+    transform: rotate(720deg);
+    transform-origin: center;
+  }
+  .line footer i,
+  p,
+  li {
+    font-size: 1rem;
+  }
+
+  .testimonials {
+    min-height: 50vh;
+    margin-top: 2rem;
+  }
+  #testimonials-name {
+    font-size: 1rem;
+    background-color: black;
+    border-radius: 10000px;
+  }
+  .feat i {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    font-size: 2rem;
+  }
+  .feat + .feat {
+    margin-top: 2rem;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  .ruler {
+    display: none;
+  }
+  .testimonials-ruler {
+    display: none;
+  }
+  .nav-list a {
+    font-size: 1.8rem;
+  }
+
+  .nav-list li + li {
+    margin-top: 1rem;
+  }
+}
